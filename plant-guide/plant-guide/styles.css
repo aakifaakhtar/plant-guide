@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --ink: #16241c;
+  --ink-soft: #1e3227;
+  --paper: #e9e2cf;
+  --paper-soft: #f2ecdc;
+  --moss: #4f6b52;
+  --moss-light: #7c9a79;
+  --clay: #a85c32;
+  --gold: #c9a24b;
+  --charcoal: #241f16;
+  --line: rgba(36, 31, 22, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid rgba(233, 226, 207, 0.2);
+  padding-bottom: 28px;
+}
+
+.site-header h1 {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.site-header .tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moss-light);
+}
+
+.kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ---------- Home grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  position: relative;
+  background: var(--paper);
+  color: var(--charcoal);
+  border-radius: 4px;
+  padding: 28px 26px 24px;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(36,31,22,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(0,0,0,0.35);
+}
+
+.card:hover .icon img { transform: rotate(-1deg) scale(1.04); }
+
+.card .num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--moss);
+  letter-spacing: 0.1em;
+}
+
+.card .icon {
+  width: 112px;
+  height: 112px;
+  margin: 6px 0 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,107,82,0.14), rgba(79,107,82,0) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(36,31,22,0.2));
+  transition: transform 0.3s ease;
+}
+
+.card h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 2px;
+  line-height: 1.15;
+}
+
+.card .latin {
+  font-style: italic;
+  color: var(--moss);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.card .blurb {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(36,31,22,0.75);
+  margin: 0 0 16px;
+}
+
+.card .enter {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clay);
+}
+
+.card .enter::after { content: " →"; }
+
+/* perforated edge, like a tag stub */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 6px;
+  background-image: radial-gradient(circle, var(--ink) 1.4px, transparent 1.6px);
+  background-size: 12px 6px;
+  background-position: 6px 0;
+  opacity: 0.5;
+}
+
+footer {
+  margin-top: 64px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--moss-light);
+  text-align: center;
+}
+
+/* ---------- Detail page ---------- */
+.back-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--moss-light);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 36px;
+}
+.back-link:hover { color: var(--paper); }
+
+.specimen-head {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  border-bottom: 1px solid rgba(233,226,207,0.2);
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.specimen-head .icon {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,162,75,0.16), rgba(201,162,75,0) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.specimen-head .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.45));
+}
+
+.specimen-head h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0 0 4px;
+}
+
+.specimen-head .latin {
+  font-style: italic;
+  color: var(--moss-light);
+  font-size: 1.05rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(233,226,207,0.15);
+  border: 1px solid rgba(233,226,207,0.15);
+  margin-bottom: 44px;
+}
+
+@media (max-width: 640px) {
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stat {
+  background: var(--ink-soft);
+  padding: 18px 16px;
+}
+
+.stat .label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stat .value {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.section h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--paper);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.section h3 .mark { color: var(--clay); font-family: 'Space Mono', monospace; font-size: 0.85rem; }
+
+.section p, .section li {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(233,226,207,0.85);
+}
+
+.section ul { margin: 0; padding-left: 20px; }
+.section li { margin-bottom: 6px; }
+
+.tip-box {
+  background: var(--ink-soft);
+  border-left: 3px solid var(--gold);
+  padding: 18px 22px;
+  margin-top: 40px;
+}
+
+.tip-box .label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 8px;
+}
