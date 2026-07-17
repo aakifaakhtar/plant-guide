@@ -177,6 +177,27 @@ footer {
   text-align: center;
 }
 
+footer .egg {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  line-height: 1;
+  opacity: 0.55;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+footer .egg img {
+  width: 14px;
+  height: 14px;
+  display: block;
+  filter: invert(70%) sepia(20%) saturate(400%) hue-rotate(60deg) brightness(95%);
+}
+
+footer .egg:hover {
+  opacity: 1;
+  transform: scale(1.25) rotate(-6deg);
+}
+
 /* ---------- Detail page ---------- */
 .back-link {
   font-family: 'Space Mono', monospace;
